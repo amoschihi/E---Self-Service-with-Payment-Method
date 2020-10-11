@@ -1,0 +1,29 @@
+<form #registerForm=ngForm (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" name="name" [(ngModel)]="form.name" class="form-control" required>
+          <span class="text-danger" [hidden]="!error['name']">{{ error['name'] }}</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" name="email" [(ngModel)]="form.email" class="form-control" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <span class="text-danger" [hidden]="!error['email']">{{ error['email'] }}</span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required>
+          <span class="text-danger" [hidden]="!error['password']">{{ error['password'] }}</span>
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" name="confirm_password" class="form-control" [(ngModel)]="form.confirm_password" required>
+          <span class="text-danger" [hidden]="!error['confirm_password']">{{ error['confirm_password'] }}</span>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" name="terms_conditions" [(ngModel)]="form.terms_conditions" class="form-check-input">
+          <label class="form-check-label" for="terms_conditions">I Accept Terms &amp; Conditions</label>
+        </div>
+        <button type="submit" [disabled] = "!registerForm.valid" class="btn btn-primary">Submit</button>
+        Already have an account? <a routerLink="/login" routerLinkActive="router-link-active">Sign In</a>
+      </form>
