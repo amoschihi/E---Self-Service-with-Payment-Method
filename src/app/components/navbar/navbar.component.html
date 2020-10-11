@@ -13,7 +13,7 @@
         <form class="form-inline my-2 my-lg-0">
             <a class="nav-link" routerLink="login" *ngIf="!loggedIn">Login</a>
             <a class="nav-link" routerLink="register" *ngIf="!loggedIn">Register</a>
-            <a class="nav-link" routerLink="logout" *ngIf="loggedIn">Logout</a>
+            <a class="nav-link" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
             
           </form>
         </div>
