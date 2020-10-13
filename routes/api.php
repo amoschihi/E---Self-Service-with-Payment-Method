@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\RoomController;
 use App\Http\Controllers\API\CourseController;
 
@@ -22,6 +23,8 @@ use App\Http\Controllers\API\CourseController;
 // });
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
+Route::post('request-password', [AuthController::class, 'resetPassword']);
+Route::post('reset-password', [AuthController::class, 'changePassword']);
  
 Route::middleware('auth:api')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
@@ -31,5 +34,6 @@ Route::middleware('auth:api')->group(function () {
 //Resources
 Route::apiResources([
     'courses' => CourseController::class,
-    'rooms' => RoomController::class
+    'rooms' => RoomController::class,
+    'roles' => RoleController::class
 ]);

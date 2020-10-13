@@ -9,6 +9,8 @@ class Role extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     /**
      * The users that belong to the role.
      */

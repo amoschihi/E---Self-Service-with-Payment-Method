@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreatePaymentsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.x
      *
      * @return void
      */
