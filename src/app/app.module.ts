@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,11 @@ import { CourseUpdateComponent } from './components/admin/courses/course-update/
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RoleCreateComponent } from './components/admin/setup/role-create/role-create.component';
+import { RoleViewComponent } from './components/admin/setup/role-view/role-view.component';
+import { RoleUpdateComponent } from './components/admin/setup/role-update/role-update.component';
+import { PasswordResetComponent } from './components/auth/password/password-reset/password-reset.component';
+import { PasswordRequestComponent } from './components/auth/password/password-request/password-request.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +31,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CourseUpdateComponent,
     HomeComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    RoleCreateComponent,
+    RoleViewComponent,
+    RoleUpdateComponent,
+    PasswordResetComponent,
+    PasswordRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SnotifyModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},

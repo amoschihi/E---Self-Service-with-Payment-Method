@@ -1,0 +1,22 @@
+<h3>List of user roles</h3>
+<a class="btn btn-lg btn-outline-primary" routerLink="/add-role">Add Role</a>
+
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Role</th>
+            <th scope="col">No. of Users</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let role of roles.data, index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ role.name }}</td>
+            <td>{{ role.count }}</td>
+            <td><a class="text-danger">Remove</a></td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>

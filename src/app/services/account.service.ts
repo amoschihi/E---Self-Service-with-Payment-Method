@@ -16,4 +16,12 @@ export class AccountService {
   register(data) {
     return this.http.post(this.baseUrl+'/register', data);
   }
+
+  requestPasswordReset(data) {
+    return this.http.post(this.baseUrl+'/request-password', data);
+  }
+
+  changePassword(data) {
+    return this.http.post(this.baseUrl+'/reset-password', data);
+  }
 }
